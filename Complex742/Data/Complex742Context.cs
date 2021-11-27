@@ -19,5 +19,10 @@ namespace Complex742.Data
         }
         
         public DbSet<Complex742.Models.Equipments.Equipment>? Equipment { get; set; }
+        public DbSet<Complex742.Models.Equipments.TypeEquipment>? TypeEquipment { get; set; }
+        public DbSet<Complex742.Models.Equipments.Work>? Work { get; set; }
+        public DbSet<Complex742.Models.Equipments.TypeWork>? TypeWork { get; set; }
+        public DbSet<Complex742.Models.Equipments.Property>? Property { get; set; }
+        public DbSet<Complex742.Models.Equipments.PropertyValue>? PropertyValue { get; set; }
     }
 }
