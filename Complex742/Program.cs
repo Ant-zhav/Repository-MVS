@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<Complex742Context>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Complex742Context")));
-
+builder.Services.AddTransient<IEquipmentRepository, DbEquipmentRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
