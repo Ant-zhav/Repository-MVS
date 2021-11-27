@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Complex742.Models.Equipments.Equipment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nameEquipment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelEquipment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.serialNumberEquipment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.manufactorerEquipment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nameEquipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelEquipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serialNumberEquipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.manufactorerEquipment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.equipmentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.equipmentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.equipmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
