@@ -17,9 +17,9 @@ namespace Complex742.Controllers
         {
             repository = repo;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(repository.EquipmentRepository);
+            return View(await repository.GetAll());
         }
     }
 }

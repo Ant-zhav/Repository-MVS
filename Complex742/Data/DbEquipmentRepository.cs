@@ -5,24 +5,18 @@ using System.Linq;
 
 namespace Complex742.Data
 {
-    public class DbEquipmentRepository: IEquipmentRepository
+    public class DbEquipmentRepository : IEquipmentRepository
     {
         private readonly Complex742Context _context;
-        
-
         public DbEquipmentRepository(Complex742Context context)
         {
             _context = context;
-            
-        }
-        IQueryable<Equipment> IEquipmentRepository.EquipmentRepository => GetAllEquipment().Result.AsQueryable<Equipment>();
 
-        public async ValueTask<IEnumerable<Equipment>> GetAllEquipment()
+        }
+
+        public async Task<List<Equipment>> GetAll()
         {
-           return await _context.Equipment.ToListAsync();
+            return await _context.Equipment.ToListAsync();
         }
-
-        
-
     }
 }
