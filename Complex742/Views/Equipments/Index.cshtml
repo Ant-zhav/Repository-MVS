@@ -1,28 +1,29 @@
 ﻿@model IEnumerable<Complex742.Models.Equipments.Equipment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Модуль \"Оборудование\" ";
 }
 
-<h1>Index</h1>
+<h1>Модуль "Оборудование"</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nameEquipment)
+                Наименование
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.modelEquipment)
+                Тип оборудования
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.serialNumberEquipment)
+                Модель
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.manufactorerEquipment)
+                Серийный номер
+            </th>
+            <th>
+                Производитель
             </th>
             <th></th>
         </tr>
@@ -51,3 +52,6 @@
 }
     </tbody>
 </table>
+
+
+
