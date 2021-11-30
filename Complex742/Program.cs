@@ -6,7 +6,9 @@ using Complex742.Models.Equipments;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<Complex742Context>(options =>
+builder.Logging.ClearProviders().AddConsole();
+
+  builder.Services.AddDbContext<Complex742Context>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Complex742Context")));
 builder.Services.AddTransient<IRepository<Equipment>, DbEquipmentRepository>();
 
@@ -15,6 +17,7 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

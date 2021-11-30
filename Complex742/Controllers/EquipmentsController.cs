@@ -12,13 +12,17 @@ namespace Complex742.Controllers
 {
     public class EquipmentsController : Controller
     {
+        private readonly ILogger<EquipmentsController> _logger;
+
         private IRepository<Equipment> repository;
-        public EquipmentsController(IRepository<Equipment> repo)
+        public EquipmentsController(IRepository<Equipment> repo, ILogger<EquipmentsController> logger)
         {
             repository = repo;
+            _logger = logger;
         }
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("EquipmentsController.GetAll called");
             return View(await repository.GetAll());
         }
     }
