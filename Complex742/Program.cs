@@ -1,13 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Complex742.Data;
+using Complex742.Models.Equipments;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<Complex742Context>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Complex742Context")));
-builder.Services.AddTransient<IEquipmentRepository, DbEquipmentRepository>();
+builder.Services.AddTransient<IRepository<Equipment>, DbEquipmentRepository>();
 
 builder.Services.AddControllersWithViews();
 

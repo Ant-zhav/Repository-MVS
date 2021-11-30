@@ -6,9 +6,9 @@ namespace Complex742.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
     }

@@ -12,8 +12,8 @@ namespace Complex742.Controllers
 {
     public class EquipmentsController : Controller
     {
-        private IEquipmentRepository repository;
-        public EquipmentsController(IEquipmentRepository repo)
+        private IRepository<Equipment> repository;
+        public EquipmentsController(IRepository<Equipment> repo)
         {
             repository = repo;
         }

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Complex742.Data
 {
-    public class DbEquipmentRepository : IEquipmentRepository
+    public class DbEquipmentRepository : IRepository<Equipment>
     {
         private readonly Complex742Context _context;
         public DbEquipmentRepository(Complex742Context context)

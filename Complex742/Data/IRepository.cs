@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Complex742.Data
 {
-    public interface IEquipmentRepository
+    public interface IRepository<T> where T : class
     {
-        Task<List<Equipment>> GetAll();
+        Task<List<T>> GetAll();
     }
 }
