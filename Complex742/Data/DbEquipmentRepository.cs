@@ -1,7 +1,6 @@
 ﻿using Complex742.Models.Equipments;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace Complex742.Data
 {
@@ -13,10 +12,6 @@ namespace Complex742.Data
             _context = context;
 
         }
-
-        public async Task<List<Equipment>> GetAll()
-        {
-            return await _context.Equipment.ToListAsync();
-        }
+        public List<Equipment> list => _context.Equipment.ToList();
     }
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-using Moq;
-using Complex742.Controllers;
+﻿using Complex742.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Moq;
+using Xunit;
 
 
 namespace Complex742.Tests
@@ -33,6 +28,6 @@ namespace Complex742.Tests
             ViewResult result = controller.Index() as ViewResult;
             Assert.Equal("~/Views/Home/Index.cshtml", result?.ViewName);
         }
-        
+
     }
 }

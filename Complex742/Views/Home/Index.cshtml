@@ -1,11 +1,35 @@
 ﻿@{
-    ViewData["Title"] = "Complex742-Home";
+    ViewData["Title"] = "Complex742";
 }
 
 <div>
-    <ul> 
-        <li>
-            <a asp-controller="Equipments" asp-action="Index">Модуль "Оборудование"</a>
-        </li>
-    </ul>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Модуль "Оборудование"</h5>
+                            <p class="card-text">Работа с оборудованием ведется в этом модуле</p>
+                            <a asp-controller="Equipments" asp-action="Index" class="btn btn-primary" class="btn btn-primary">Перейти в модуль</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Модуль "Персонал"</h5>
+                            <p class="card-text">Работа с персоналом ведется в этом модуле</p>
+                            <a asp-controller="Equipments" asp-action="Index" class="btn btn-primary">Перейти в модуль</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Модуль "Химия"</h5>
+                            <p class="card-text">Работа с химическими веществами ведется в этом модуле</p>
+                            <a asp-controller="Equipments" asp-action="Index" class="btn btn-primary">Перейти в модуль</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </div>

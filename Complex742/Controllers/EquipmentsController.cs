@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Complex742.Data;
+﻿using Complex742.Data;
 using Complex742.Models.Equipments;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Complex742.Controllers
 {
@@ -22,8 +16,15 @@ namespace Complex742.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            _logger.LogInformation("EquipmentsController.GetAll called");
-            return View(await repository.GetAll());
+            _logger.LogInformation("EquipmentsController.Index called");
+            return View(await Task.Run(() => repository.list));
         }
+
+        public void Create(Equipment equippment)
+        { 
+            repository.list.Add(equippment);
+            
+        }
+        
     }
 }

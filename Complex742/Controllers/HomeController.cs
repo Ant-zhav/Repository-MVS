@@ -1,7 +1,4 @@
-﻿using Complex742.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 
 
 namespace Complex742.Controllers
@@ -11,15 +8,14 @@ namespace Complex742.Controllers
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
-        { 
+        {
             _logger = logger;
         }
 
         public ViewResult Index()
         {
-            _logger.LogInformation("HomeController called.Index");
+            _logger.LogInformation("HomeController.Index called");
             return View("~/Views/Home/Index.cshtml");
         }
-        
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Complex742.Models.Equipments
+﻿namespace Complex742.Models.Equipments
 {
     public class TypeWork
     {

@@ -20,10 +20,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-app.UseRouting();
+//app.UseRouting();
 
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapControllerRoute(name:"equipment", pattern: "{Controller=Equipment}/{action=Index}/{id?}");
 
 app.Run();
