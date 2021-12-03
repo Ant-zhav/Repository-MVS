@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-
 namespace Complex742.Controllers
 {
     public class HomeController : Controller
@@ -11,11 +10,10 @@ namespace Complex742.Controllers
         {
             _logger = logger;
         }
-
-        public ViewResult Index()
+        public async Task<ViewResult> Index()
         {
             _logger.LogInformation("HomeController.Index called");
-            return View("~/Views/Home/Index.cshtml");
+            return await Task.Run(()=>View("~/Views/Home/Index.cshtml"));
         }
     }
 }

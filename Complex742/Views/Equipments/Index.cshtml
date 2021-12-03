@@ -25,6 +25,9 @@
             <th>
                 Производитель
             </th>
+            <th>
+                Мастер-оборудование
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +38,9 @@
                 @Html.DisplayFor(modelItem => item.nameEquipment)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.type.nameType)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.modelEquipment)
             </td>
             <td>
@@ -43,10 +49,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.manufactorerEquipment)
             </td>
+             <td>
+                <a asp-controller="Equipment" asp-action="Index(@item.masterEquipment)">@Html.DisplayFor(modelItem => item.masterEquipment)</a>
+            </td>
         </tr>
 }
     </tbody>
 </table>
+
+<button type="button" class="btn btn-primary btn-lg">Добавить оборудование</button>
 
 
 

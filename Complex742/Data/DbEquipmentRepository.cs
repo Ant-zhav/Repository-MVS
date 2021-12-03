@@ -10,8 +10,12 @@ namespace Complex742.Data
         public DbEquipmentRepository(Complex742Context context)
         {
             _context = context;
-
         }
         public List<Equipment> list => _context.Equipment.ToList();
+        public void Add(Equipment eq)
+        { 
+            _context.Equipment.Add(eq);
+            _context.SaveChanges();
+        }
     }
 }

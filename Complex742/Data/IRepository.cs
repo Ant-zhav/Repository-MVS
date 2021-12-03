@@ -5,5 +5,6 @@ namespace Complex742.Data
     public interface IRepository<T> where T : class
     {
         List<T> list { get;}
+        public void Add(T ob);
     }
 }

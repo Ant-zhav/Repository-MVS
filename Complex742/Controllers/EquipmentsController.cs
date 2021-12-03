@@ -1,6 +1,7 @@
 ﻿using Complex742.Data;
 using Complex742.Models.Equipments;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Complex742.Controllers
 {
@@ -14,17 +15,17 @@ namespace Complex742.Controllers
             repository = repo;
             _logger = logger;
         }
-        public async Task<IActionResult> Index()
-        {
-            _logger.LogInformation("EquipmentsController.Index called");
-            return View(await Task.Run(() => repository.list));
-        }
-
-        public void Create(Equipment equippment)
+        public async Task<IActionResult> Index(Equipment eq=null)
         { 
-            repository.list.Add(equippment);
+            _logger.LogInformation("EquipmentsController.Index called {0}", eq.equipmentId);
             
+           
+            return View(await Task.Run(() => repository.list.Where(p => eq.equipmentId==0 ? p.masterEquipment==null : p.masterEquipment==eq).ToList()));
         }
-        
+        public async void Add(Equipment eq)
+        {
+            _logger.LogInformation("EquipmentsController Equipment added");
+            await Task.Run(()=>repository.Add(eq));
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
+using System.Threading.Tasks;
 using Xunit;
 
 
@@ -15,8 +16,8 @@ namespace Complex742.Tests
             var mock = new Mock<ILogger<HomeController>>();
             var imitationLogger = mock.Object;
             HomeController controller = new HomeController(imitationLogger);
-            ViewResult viewResult = controller.Index() as ViewResult;
-            Assert.NotNull(viewResult?.ViewData);
+            Task<ViewResult> viewResult = controller.Index();
+            Assert.NotNull(viewResult.Result);
         }
 
         [Fact]
@@ -25,8 +26,8 @@ namespace Complex742.Tests
             var mock = new Mock<ILogger<HomeController>>();
             var imitationLogger = mock.Object;
             HomeController controller = new HomeController(imitationLogger);
-            ViewResult result = controller.Index() as ViewResult;
-            Assert.Equal("~/Views/Home/Index.cshtml", result?.ViewName);
+            Task<ViewResult> viewResult = controller.Index();
+            Assert.Equal("~/Views/Home/Index.cshtml", viewResult.Result.ViewName);
         }
 
     }
